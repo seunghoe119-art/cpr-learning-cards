@@ -25,8 +25,12 @@ const intro=document.querySelector('#intro'),lesson=document.querySelector('#les
 const cardText=document.querySelector('#cardText'),note=document.querySelector('#note'),noteText=document.querySelector('#noteText');
 let index=-1,touchX=0,touchY=0;
 const total=qa.length*2;
+let sessionId='';
+const supabaseUrl='https://rebjcoazabhkcobjjzkj.supabase.co';
+const supabasePublishableKey='sb_publishable_56dLyg6nM0RWsDsHy08kPA_cMQHPt1J';
+function makeSessionId(){if(crypto.randomUUID)return crypto.randomUUID();return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return(c==='x'?r:(r&3|8)).toString(16)})}
 function showIntro(){index=-1;intro.hidden=false;lesson.hidden=true;finish.hidden=true;window.location.hash='home'}
-function start(){index=0;intro.hidden=true;finish.hidden=true;lesson.hidden=false;render()}
+function start(){index=0;sessionId=makeSessionId();intro.hidden=true;finish.hidden=true;lesson.hidden=false;render()}
 function render(){if(index>=total){lesson.hidden=true;finish.hidden=false;return}if(index<0){showIntro();return}lesson.hidden=false;intro.hidden=true;finish.hidden=true;
  const item=Math.floor(index/2),isAnswer=index%2===1,data=qa[item];
  document.querySelector('#cardKind').textContent=isAnswer?'답변':'질문';document.querySelector('#counter').textContent=`${String(index+1).padStart(2,'0')} / ${total}`;
@@ -44,5 +48,19 @@ document.querySelector('#startButton').addEventListener('click',start);document.
 document.addEventListener('keydown',e=>{if(document.querySelector('#sourcesDialog').open)return;if(e.key==='ArrowRight')next();if(e.key==='ArrowLeft')prev()});
 card.addEventListener('touchstart',e=>{touchX=e.changedTouches[0].screenX;touchY=e.changedTouches[0].screenY},{passive:true});card.addEventListener('touchend',e=>{const dx=e.changedTouches[0].screenX-touchX,dy=e.changedTouches[0].screenY-touchY;if(Math.abs(dx)>48&&Math.abs(dx)>Math.abs(dy)*1.25){dx<0?next():prev()}},{passive:true});
 const dialog=document.querySelector('#sourcesDialog');document.querySelector('#sourcesButton').addEventListener('click',()=>dialog.showModal());document.querySelector('#closeDialog').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
+const attendanceForm=document.querySelector('#attendanceForm'),participantNames=document.querySelector('#participantNames'),attendanceStatus=document.querySelector('#attendanceStatus'),saveAttendanceButton=document.querySelector('#saveAttendanceButton');
+attendanceForm.addEventListener('submit',async e=>{
+ e.preventDefault();
+ const names=participantNames.value.split(/\r?\n/).map(name=>name.trim()).filter(Boolean);
+ if(!names.length){attendanceStatus.textContent='참여한 대원 성함을 적어 주세요.';participantNames.focus();return}
+ if(names.length>50){attendanceStatus.textContent='성함은 한 번에 50분까지 적을 수 있어요.';participantNames.focus();return}
+ if(names.some(name=>name.length>80)){attendanceStatus.textContent='성함은 한 줄에 적당한 길이로 입력해 주세요.';participantNames.focus();return}
+ saveAttendanceButton.disabled=true;attendanceStatus.textContent='참여 기록을 저장하고 있어요.';
+ try{
+  const response=await fetch(`${supabaseUrl}/rest/v1/cpr_training_sessions?on_conflict=session_id`,{method:'POST',headers:{apikey:supabasePublishableKey,Authorization:`Bearer ${supabasePublishableKey}`,'Content-Type':'application/json',Prefer:'resolution=ignore-duplicates,return=minimal'},body:JSON.stringify({session_id:sessionId||makeSessionId(),participants:names})});
+  if(!response.ok)throw new Error('attendance_save_failed');
+  attendanceStatus.textContent='참여 기록을 저장했습니다. 함께해 주셔서 고맙습니다.';participantNames.value='';participantNames.disabled=true;saveAttendanceButton.textContent='저장 완료';
+ }catch(error){attendanceStatus.textContent='저장하지 못했습니다. 연결 상태를 확인한 뒤 다시 시도해 주세요.';saveAttendanceButton.disabled=false}
+});
 render();
 
