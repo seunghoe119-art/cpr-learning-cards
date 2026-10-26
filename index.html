@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#102a32">
+  <meta name="description" content="질문과 답변 카드로 익히는 일반인 CPR·AED 교육 자료">
+  <title>CPR 한 장씩 배우기</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app" id="app">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="첫 화면으로">CPR <span>한 장씩</span></a>
+      <button class="icon-button" id="homeButton" type="button" aria-label="처음으로" title="처음으로">⌂</button>
+    </header>
+
+    <section class="screen intro" id="intro" aria-labelledby="introTitle">
+      <p class="eyebrow">모바일 응급처치 학습</p>
+      <h1 id="introTitle">당황하지 않고,<br><em>한 장씩 익혀요.</em></h1>
+      <p class="intro-copy">질문을 읽고 옆으로 넘겨 답을 확인하세요.<br>20개 질문 · 40장</p>
+      <button class="primary-button" id="startButton" type="button">학습 시작 <span aria-hidden="true">→</span></button>
+    </section>
+
+    <section class="screen lesson" id="lesson" aria-label="CPR 질문과 답변" hidden>
+      <div class="progress-area">
+        <div class="progress-label"><span id="cardKind">질문</span><span id="counter">01 / 40</span></div>
+        <div class="progress-track" role="progressbar" aria-label="학습 진행률" aria-valuemin="1" aria-valuemax="40" aria-valuenow="1" id="progress"><span id="progressFill"></span></div>
+        <div class="question-context"><span id="questionNumber">질문 01</span><span id="topic">기본 판단</span></div>
+      </div>
+      <article class="card" id="card" aria-live="polite" aria-atomic="true">
+        <div class="card-inner">
+          <div class="card-top"><span class="type-pill" id="typePill">질문</span><span class="card-mark" id="cardMark">Q</span></div>
+          <p class="card-kicker" id="cardKicker">일반인이 가장 많이 궁금해하는 질문</p>
+          <h1 id="cardText"></h1>
+          <aside class="note" id="note" hidden><span class="note-icon">i</span><p id="noteText"></p></aside>
+          <div class="card-bottom"><span id="cardFoot">옆으로 넘겨 답을 확인하세요</span><span class="swipe-icon" aria-hidden="true">↔</span></div>
+        </div>
+      </article>
+      <nav class="controls" aria-label="카드 이동">
+        <button class="secondary-button" id="prevButton" type="button" aria-label="이전 카드"><span aria-hidden="true">←</span><small>이전</small></button>
+        <button class="primary-button next-button" id="nextButton" type="button">답변 보기 <span aria-hidden="true">→</span></button>
+      </nav>
+      <p class="keyboard-hint">화면을 좌우로 밀어 이동 · 키보드 ← →</p>
+    </section>
+
+    <section class="screen finish" id="finish" hidden aria-labelledby="finishTitle">
+      <div class="finish-icon" aria-hidden="true">✓</div>
+      <p class="eyebrow">학습 완료</p>
+      <h1 id="finishTitle">기억해요.<br><em>살리는 행동은 빠르게.</em></h1>
+      <p>현장에서는 먼저 주변 안전을 확인하고 119에 신고한 뒤, 신고 안내와 AED 음성 지시에 따라 행동하세요.</p>
+      <button class="primary-button" id="restartButton" type="button">처음부터 다시 보기 <span aria-hidden="true">↻</span></button>
+    </section>
+
+    <footer class="site-footer"><span>CPR · AED 기초 교육</span><button id="sourcesButton" type="button">자료 및 주의사항</button></footer>
+    <dialog id="sourcesDialog">
+      <div class="dialog-head"><h2>자료 및 주의사항</h2><button id="closeDialog" type="button" aria-label="닫기">×</button></div>
+      <p>이 자료는 학습용 요약입니다. 실제 응급상황에서는 119 신고 후 상담원의 안내와 AED 음성 안내를 따르세요. 어린이·영아, 익수, 임신 등 상황별 처치는 교육받은 술기와 현행 지역 지침이 우선합니다.</p>
+      <p>원문 답변은 보존하고, 정확성을 위해 일부 카드에 보충 주석을 덧붙였습니다. 법률 문구는 법률 자문이 아닙니다.</p>
+      <ul>
+        <li><a href="https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-basic-life-support" target="_blank" rel="noreferrer">AHA 2025 성인 기본소생술 지침</a></li>
+        <li><a href="https://professional.heart.org/en/science-news/2024-aha-and-aap-focused-update-on-special-circumstances-resuscitation-following-drowning/top-things-to-know" target="_blank" rel="noreferrer">AHA/AAP 익수 후 소생술 업데이트</a></li>
+        <li><a href="https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1032831315" target="_blank" rel="noreferrer">국가법령정보센터: 응급의료에 관한 법률 제5조의2</a></li>
+      </ul>
+    </dialog>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
+
