@@ -16,4 +16,15 @@
 /* 긴 답변에서도 이동 버튼을 화면 안에 고정 */
 html,body{height:100%;overflow:hidden}.app{height:100svh;min-height:0;overflow:hidden}.screen,.lesson{min-height:0}.lesson{flex:1}.card{min-height:0;max-height:none;flex:1}.card-inner{height:100%;min-height:0}
 @media(max-height:760px){.card{min-height:0}.card-inner{min-height:0}}
+/* Warm pink and soft red palette for the brigade learning circle */
+:root{color-scheme:light;--ink:#32131d;--muted:#76515a;--bg:#fff5f6;--panel:#fffafb;--line:#e7bac2;--mint:#b62947;--lime:#c52e4b;--coral:#e8899a;--shadow:0 20px 56px #7c263219}
+html,body{background:#fff5f6;color:var(--ink)}body{background:radial-gradient(ellipse at 50% 16%,#fffafb 0,#fff1f3 55%,#fbe5e9 100%)}
+.app{color:var(--ink)}.brand{color:#471b27}.brand span{color:#b62947}.icon-button,.secondary-button{border-color:#e5b8c0;background:#fffafb;color:#a7203c}.site-footer{border-color:#e7c3ca;color:#704c55}.site-footer button{color:#a7203c}
+.eyebrow{color:#b62947}.intro h1 em,.finish h1 em{color:#b62947}.intro-copy{color:#63434b}.intro .primary-button,.finish .primary-button,.controls .primary-button{background:#bf2947;color:#fff;box-shadow:0 9px 24px #8c1e3625}.primary-button:hover{filter:brightness(1.06)}
+.progress-label{color:#76515a}.progress-label span:first-child{color:#b62947}.progress-track{background:#f0d7dc}.progress-track span{background:#c52e4b}.question-context{color:#76515a}.question-context span:first-child{color:#32131d}
+.card{border-color:#e8bdc5;background:linear-gradient(145deg,#fffafb,#fff0f2 65%,#fce7eb);box-shadow:0 20px 55px #8f253116}.card:before{background:#c8325010}.type-pill{background:#f9dfe4;color:#ad2943}.card.answer .type-pill{background:#f5dce1;color:#a8223c}.card-mark,.card.answer .card-mark{color:#bb31502d}.card-kicker{color:#79515a}.note{border-left-color:#cf536c;background:#fff0f2;color:#63323e}.note-icon{color:#b62947}.card-bottom{color:#76545b}.swipe-icon{color:#ba2f4a}.secondary-button small{color:#76515a}.finish-icon{background:#f5cbd3;color:#9b203a}
+dialog{border-color:#e7bac2;background:#fffafb;color:#32131d}dialog::backdrop{background:#45121c75;backdrop-filter:blur(4px)}.dialog-head button{color:#8f1d35}.dialog-head~p,dialog li{color:#63434b}dialog a{color:#a71f3b}button:focus-visible,a:focus-visible{outline-color:#c52e4b}
+.cycle-box{width:min(100%,620px);margin:0 auto 28px;padding:18px 22px;border:1px solid #edc2ca;border-radius:18px;background:#fffafb}.cycle-box p{margin:0;color:#4e222e;font-size:clamp(16px,3.7vw,21px);font-weight:800;line-height:1.8}.cycle-box p span{color:#c52e4b;padding:0 2px}.cycle-box small{display:block;margin-top:7px;color:#79515a;font-size:15px;line-height:1.6}.intro .primary-button{min-height:76px;font-size:22px}
+@media(max-height:760px){.cycle-box{margin-bottom:18px;padding:13px 16px}.cycle-box p{font-size:17px}.cycle-box small{font-size:14px}}
+@media(max-width:430px){.cycle-box{padding:15px 12px}.cycle-box p{font-size:16px;line-height:2}.cycle-box small{font-size:14px}}
 
