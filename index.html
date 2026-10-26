@@ -52,7 +52,15 @@
       <div class="finish-icon" aria-hidden="true">✓</div>
       <p class="eyebrow">학습 완료</p>
       <h1 id="finishTitle">기억해요.<br><em>살리는 행동은 빠르게.</em></h1>
-      <p>현장에서는 먼저 주변 안전을 확인하고 119에 신고한 뒤, 신고 안내와 AED 음성 지시에 따라 행동하세요.</p>
+      <p>오늘 함께한 의소대원 성함을 남겨 주세요.<br>이름은 한 줄에 한 분씩 적으면 됩니다.</p>
+      <form class="attendance-form" id="attendanceForm">
+        <label for="participantNames">참여한 대원 성함</label>
+        <textarea id="participantNames" name="participantNames" rows="4" placeholder="예: 홍길동&#10;김영희" required></textarea>
+        <small>참여 확인을 위해 성함과 기록 시각만 저장합니다.</small>
+        <button class="primary-button" id="saveAttendanceButton" type="submit">참여 기록 저장 <span aria-hidden="true">→</span></button>
+        <p class="save-status" id="attendanceStatus" role="status" aria-live="polite"></p>
+      </form>
+      <p class="finish-reminder">현장에서는 주변 안전을 확인하고 119에 신고한 뒤, 신고 안내와 AED 음성 지시에 따라 행동하세요.</p>
       <button class="primary-button" id="restartButton" type="button">처음부터 다시 보기 <span aria-hidden="true">↻</span></button>
     </section>
 
@@ -68,7 +76,7 @@
       </ul>
     </dialog>
   </main>
-  <script src="app.js?v=rose-learning"></script>
+  <script src="app.js?v=attendance-save"></script>
 </body>
 </html>
 
