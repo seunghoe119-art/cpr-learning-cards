@@ -2,13 +2,13 @@ const qa = [
   {q:'숨을 안 쉬면 무조건 CPR을 해야 하나요?',a:'반응이 없고 정상적인 호흡이 없거나 헐떡이는 호흡만 보이면 심정지로 판단하고 CPR을 시작합니다.',n:'주변 안전을 확인하고 119에 신고하세요. 일반인은 맥박 확인에 시간을 쓰지 말고, 신고 상담원의 안내에 따라 가슴압박을 시작합니다.'},
   {q:'심장이 뛰는 사람에게 CPR을 하면 위험하지 않나요?',a:'불필요한 압박은 손상을 줄 수 있지만, 심정지가 의심되는 상황에서 CPR을 지연하는 것이 더 위험합니다.',n:'반응이 없고 숨이 없거나 헐떡이는 비정상 호흡이면 심정지를 의심하세요. 정상 호흡이 확인되면 압박하지 말고 119에 신고해 관찰합니다.'},
   {q:'갈비뼈가 부러지면 어떻게 하나요?',a:'갈비뼈 손상이 발생할 수 있지만 생명을 살리는 것이 우선입니다. 정확한 자세로 압박을 계속합니다.',n:'가슴 중앙(가슴뼈 아래쪽 절반)을 수직으로 누르고, 매 압박 뒤 가슴이 완전히 올라오도록 합니다.'},
-  {q:'가슴압박은 얼마나 깊게 하나요?',a:'성인은 약 5cm 깊이로, 6cm를 넘지 않도록 압박합니다.',n:'성인 기준입니다. 어린이·영아는 가슴 두께에 따른 압박 깊이와 방법이 다릅니다.'},
-  {q:'가슴압박은 얼마나 빠르게 하나요?',a:'1분에 100~120회 속도로 실시합니다.',n:'성인 기준이며 압박 사이에 가슴이 완전히 올라오게 하고, 중단을 최소화합니다.'},
-  {q:'인공호흡을 꼭 해야 하나요?',a:'인공호흡을 할 수 없거나 꺼려진다면 가슴압박만이라도 지속해야 합니다.',n:'성인 심정지에서 일반인은 가슴압박만 하는 CPR도 시작할 수 있습니다. 교육받았고 할 수 있다면 30회 압박과 2회 인공호흡을 시행합니다. 익수 등 저산소성 심정지는 인공호흡이 특히 중요하므로 교육받은 경우 압박과 호흡을 함께 하세요.'},
+  {q:'가슴압박은 어느 정도 깊이로 하나요?',a:'성인은 가슴 중앙을 충분히 깊게 눌러야 합니다. 마네킹 실습에서 강사의 시범을 보고 올바른 자세와 깊이를 익혀요.',n:'어린이와 영아는 방법이 다릅니다. 현장 실습과 강사의 안내를 따르세요.'},
+  {q:'가슴압박은 어떤 리듬으로 하나요?',a:'빠르고 일정한 리듬으로 압박하고, 중단을 줄여야 합니다. 진행자가 시범을 보이고 모임원이 번갈아 연습해 봅니다.',n:'숫자를 외우기보다 실습에서 일정한 리듬과 자세를 익히고 서로 피드백을 나눠요.'},
+  {q:'인공호흡을 꼭 해야 하나요?',a:'인공호흡이 어렵거나 망설여져도 가슴압박을 바로 시작하세요.',n:'교육받았고 할 수 있다면 가슴압박과 인공호흡을 함께 합니다. 익수처럼 호흡 문제가 원인일 수 있는 경우에는 인공호흡이 중요합니다. 망설여지면 119 상담원의 안내를 따르세요.'},
   {q:'CPR은 언제까지 해야 하나요?',a:'119구급대가 인계받거나 환자가 정상적인 호흡 등 회복 징후를 보일 때까지 지속합니다.',n:'정상적으로 숨을 쉬고 회복한 경우에는 압박을 멈추고 상태를 관찰합니다. AED 분석·충격 안내 때만 잠시 손을 떼고, 안내 직후 CPR을 재개합니다.'},
   {q:'AED(자동심장충격기)는 일반인도 사용할 수 있나요?',a:'네. 전원을 켜고 음성 안내에 따라 사용하면 됩니다.',n:'패드를 맨 가슴에 붙이고 분석·충격 시에는 모두 환자에게서 떨어지게 하세요. 충격 여부와 관계없이 AED가 안내하면 즉시 CPR을 재개합니다.'},
   {q:'AED로 충격을 주면 심장이 멈추는 것 아닌가요?',a:'심장의 치명적인 부정맥을 교정하기 위한 장비입니다. 모든 심정지 환자에게 충격을 주는 것은 아닙니다.',n:'AED가 심장 리듬을 분석해 충격이 필요한 경우에만 안내합니다. 분석·충격 전 주변 사람이 환자에게 닿지 않도록 확인하세요.'},
-  {q:'CPR을 하다가 사람이 잘못되면 처벌받나요?',a:'응급의료법상 선의의 응급처치에 대한 법적 보호 규정이 있습니다. 다만 고의나 중대한 과실 등은 예외가 될 수 있습니다.',n:'법 제5조의2는 생명이 위급한 환자에게 선의로 응급처치한 경우, 고의 또는 중대한 과실이 없는 때 민사책임과 상해에 대한 형사책임을 면제하고 사망에 대한 형사책임은 감면한다고 규정합니다. 구체적 사안의 법률 판단을 대신하지 않습니다.'},
+  {q:'CPR을 하다가 사람이 잘못되면 처벌받나요?',a:'선의로 한 응급처치에는 법적 보호 규정이 있지만, 모든 경우에 책임이 면제되는 것은 아닙니다.',n:'고의나 중대한 과실 등 예외가 있을 수 있습니다. 구체적인 상황에 대한 법적 판단은 별도로 확인해야 합니다.'},
   {q:'침대 위에서도 CPR을 해도 되나요?',a:'가능하면 단단하고 평평한 바닥에서 실시합니다.',n:'환자를 바닥으로 옮기느라 압박 시작이 지연되지 않도록 하세요. AED가 있으면 함께 가져와 사용합니다.'},
   {q:'여성에게 CPR을 할 때 가슴을 눌러도 되나요?',a:'성별과 관계없이 가슴 중앙의 정확한 위치를 압박해야 합니다.',n:'옷을 필요한 만큼 열어 정확한 위치에 압박하고, AED 패드는 맨 피부에 부착합니다. 노출은 처치에 필요한 범위로 최소화합니다.'},
   {q:'임산부에게도 CPR을 해도 되나요?',a:'네. 즉시 CPR을 시행하고 임신 사실을 119에 알립니다.',n:'도움을 요청하고 AED도 사용하세요. 임신 중 상황별 처치는 구조대·의료진과 교육받은 사람의 지침을 따릅니다.'},
@@ -32,12 +32,12 @@ function render(){if(index>=total){lesson.hidden=true;finish.hidden=false;return
  document.querySelector('#cardKind').textContent=isAnswer?'답변':'질문';document.querySelector('#counter').textContent=`${String(index+1).padStart(2,'0')} / ${total}`;
  document.querySelector('#questionNumber').textContent=`질문 ${String(item+1).padStart(2,'0')}`;document.querySelector('#topic').textContent=topics[item];
  document.querySelector('#progressFill').style.width=`${((index+1)/total)*100}%`;document.querySelector('#progress').setAttribute('aria-valuenow',index+1);
- document.querySelector('#typePill').textContent=isAnswer?'모범 답변':'질문';document.querySelector('#cardMark').textContent=isAnswer?'A':'Q';
- document.querySelector('#cardKicker').textContent=item<10?'일반인이 가장 많이 궁금해하는 질문':'실제 강의에서 나올 만한 추가 질문';
+ document.querySelector('#typePill').textContent=isAnswer?'함께 확인할 답':'함께 이야기할 질문';document.querySelector('#cardMark').textContent=isAnswer?'A':'Q';
+ document.querySelector('#cardKicker').textContent=isAnswer?'의견을 나눈 뒤 자료와 함께 확인해요':'진행자가 읽고, 모두 편하게 의견을 나눠요';
  card.classList.toggle('answer',isAnswer);cardText.textContent=isAnswer?data.a:data.q;
  note.hidden=!(isAnswer&&data.n);noteText.textContent=data.n||'';
- document.querySelector('#cardFoot').textContent=isAnswer?'다음 질문으로 계속하세요':'옆으로 넘겨 답을 확인하세요';
- document.querySelector('#nextButton').innerHTML=index===total-1?'학습 마치기 <span aria-hidden="true">✓</span>':isAnswer?'다음 질문 <span aria-hidden="true">→</span>':'답변 보기 <span aria-hidden="true">→</span>';
+ document.querySelector('#cardFoot').textContent=isAnswer?'역할을 바꾸고 다음 주제로 이어가요':'각자 정답을 맞히는 시간이 아니에요';
+ document.querySelector('#nextButton').innerHTML=index===total-1?'함께 마무리하기 <span aria-hidden="true">✓</span>':isAnswer?'다음 주제로 <span aria-hidden="true">→</span>':'답을 함께 확인하기 <span aria-hidden="true">→</span>';
 }
 function next(){if(index<0){start();return}index++;render()}function prev(){if(index<=0){showIntro();return}index--;render()}
 document.querySelector('#startButton').addEventListener('click',start);document.querySelector('#nextButton').addEventListener('click',next);document.querySelector('#prevButton').addEventListener('click',prev);document.querySelector('#homeButton').addEventListener('click',showIntro);document.querySelector('#restartButton').addEventListener('click',start);
